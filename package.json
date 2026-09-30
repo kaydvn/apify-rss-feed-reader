@@ -1,0 +1,16 @@
+{
+  "name": "rss-feed-reader",
+  "version": "1.0.0",
+  "description": "Read many RSS 2.0, RSS 1.0/RDF, Atom and JSON Feed sources (feed or website URLs) into one clean, deduplicated dataset with keyword and date filters.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apify": "^3.7.2",
+    "fast-xml-parser": "^4.5.0"
+  }
+}

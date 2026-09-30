@@ -1,0 +1,173 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "feedUrl": {
+        "type": "string",
+        "description": "Feed URL the item came from"
+      },
+      "feedTitle": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Feed title"
+      },
+      "siteUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Website URL of the feed"
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Item title"
+      },
+      "link": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Item link"
+      },
+      "guid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Item guid or id"
+      },
+      "author": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Author"
+      },
+      "categories": {
+        "type": "array",
+        "description": "Categories or tags",
+        "items": {
+          "type": "string"
+        }
+      },
+      "publishedAt": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Publication time, ISO 8601 UTC"
+      },
+      "updatedAt": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Update time, ISO 8601 UTC"
+      },
+      "summary": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Summary as plain text, max 1000 chars"
+      },
+      "content": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Full content as plain text (includeContent only)"
+      },
+      "imageUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Image from enclosure, media tags or first img"
+      },
+      "enclosure": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "Attached file, e.g. podcast audio: url, type, length"
+      },
+      "language": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Language code"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Error when the feed could not be read (row is free)"
+      }
+    },
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "feedTitle",
+          "title",
+          "link",
+          "publishedAt",
+          "author",
+          "categories",
+          "summary",
+          "imageUrl",
+          "error",
+          "feedUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "feedTitle": {
+            "label": "feedTitle"
+          },
+          "title": {
+            "label": "title"
+          },
+          "link": {
+            "label": "link"
+          },
+          "publishedAt": {
+            "label": "publishedAt"
+          },
+          "author": {
+            "label": "author"
+          },
+          "categories": {
+            "label": "categories"
+          },
+          "summary": {
+            "label": "summary"
+          },
+          "imageUrl": {
+            "label": "imageUrl"
+          },
+          "error": {
+            "label": "error"
+          },
+          "feedUrl": {
+            "label": "feedUrl"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "title": "RSS & Atom Feed Reader",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "feeds": {
+      "title": "Feed or website URLs",
+      "type": "array",
+      "description": "RSS, Atom, RDF or JSON Feed URLs. A website URL also works: the feed is auto-discovered from its HTML or from common paths (/feed, /rss.xml, /atom.xml, /index.xml).",
+      "editor": "stringList",
+      "prefill": [
+        "https://hnrss.org/frontpage",
+        "https://www.theverge.com/rss/index.xml"
+      ]
+    },
+    "maxItemsPerFeed": {
+      "title": "Max items per feed",
+      "type": "integer",
+      "description": "Keep at most this many items from each feed, after filters and dedupe.",
+      "minimum": 1,
+      "maximum": 10000,
+      "default": 50
+    },
+    "since": {
+      "title": "Only items published after",
+      "type": "string",
+      "description": "Optional ISO date or date-time, for example 2026-01-31 or 2026-01-31T08:00:00Z. Items without a publication date are skipped when this is set.",
+      "editor": "textfield"
+    },
+    "keywords": {
+      "title": "Keywords",
+      "type": "array",
+      "description": "Optional. Keep only items whose title or summary contains at least one of these words or phrases (case-insensitive).",
+      "editor": "stringList"
+    },
+    "dedupe": {
+      "title": "Remove duplicates",
+      "type": "boolean",
+      "description": "Skip items already seen in this run, matched by guid or link across all feeds.",
+      "default": true
+    },
+    "includeContent": {
+      "title": "Include full content",
+      "type": "boolean",
+      "description": "Add the full article body (content:encoded, Atom content, JSON Feed content) as plain text in the content field.",
+      "default": false
+    },
+    "timeoutSecs": {
+      "title": "Timeout per request (seconds)",
+      "type": "integer",
+      "description": "Give up on a request after this many seconds.",
+      "minimum": 3,
+      "maximum": 90,
+      "default": 20
+    },
+    "concurrency": {
+      "title": "Concurrency",
+      "type": "integer",
+      "description": "Feeds processed in parallel, 1-50.",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10
+    }
+  }
+}
