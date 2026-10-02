@@ -61,5 +61,6 @@
       "maximum": 50,
       "default": 10
     }
-  }
+  },
+  "required": ["feeds"]
 }

@@ -47,12 +47,12 @@ Feed URLs are found automatically. Update `since` per run (for example with a sc
 
 ## Output (one row per item)
 ```json
-{"feedUrl":"https://hnrss.org/frontpage","feedTitle":"Hacker News: Front Page","siteUrl":"https://news.ycombinator.com/","title":"Show HN: Something new","link":"https://example.com/post","guid":"https://news.ycombinator.com/item?id=1","author":"someone","categories":["tech"],"publishedAt":"2026-01-31T08:15:00.000Z","updatedAt":null,"summary":"Plain text summary...","imageUrl":"https://example.com/cover.jpg","enclosure":null,"language":"en"}
+{"feedUrl":"https://hnrss.org/frontpage","feedTitle":"Hacker News: Front Page","siteUrl":"https://news.ycombinator.com/","title":"Show HN: Something new","link":"https://example.com/post","guid":"https://news.ycombinator.com/item?id=1","author":"someone","categories":["tech"],"publishedAt":"2026-01-31T08:15:00.000Z","updatedAt":null,"summary":"Plain text summary...","content":null,"imageUrl":"https://example.com/cover.jpg","enclosure":null,"language":"en"}
 ```
 A failed feed gives `{"feedUrl":"...","error":"http_404"}` (also `timeout`, `no_feed_found`, DNS codes). A `SUMMARY` record in the key-value store has the totals.
 
-## Price guide
-Pay per event: **$0.001 per item** ($1 per 1,000). No start fee.
+## Pricing
+Pay per event: the `item` event costs **$0.001 per item** in the dataset (that is **$1.00 per 1,000 items**). No start fee. Feeds that fail are free.
 
 | Items | Cost |
 |---|---|
